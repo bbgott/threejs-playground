@@ -1,10 +1,11 @@
 import { Canvas } from '@react-three/fiber'
 import { useGLTF, OrbitControls, Stage } from '@react-three/drei'
 import { Suspense } from 'react'
+import volcanoUrl from './assets/Volcano.glb'
 import Smoke from './Smoke'
 
 function VolcanoModel() {
-  const { scene } = useGLTF('/Volcano.glb')
+  const { scene } = useGLTF(volcanoUrl)
   return <primitive object={scene} />
 }
 
