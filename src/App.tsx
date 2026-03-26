@@ -1,8 +1,8 @@
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Stage } from '@react-three/drei'
 import { Suspense } from 'react'
-import { Volcano } from './Volcano'
-import Smoke from './Smoke'
+import { Volcano } from './components/Volcano.tsx'
+import Smoke from './components/Smoke.tsx'
 import './App.css'
 
 function App() {

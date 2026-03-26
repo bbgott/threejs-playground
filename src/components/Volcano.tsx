@@ -6,16 +6,17 @@ Files: src/assets/Volcano.glb [334.82KB] > /workspaces/threejs-playground/Volcan
 
 import React from 'react'
 import { useGLTF } from '@react-three/drei'
-import volcanoUrl from './assets/Volcano-transformed.glb'
+import volcanoUrl from '../assets/Volcano-transformed.glb'
+import * as THREE from 'three'
 
-export function Volcano(props) {
+export function Volcano(props: React.ComponentProps<'group'>) {
   const { nodes, materials } = useGLTF(volcanoUrl)
   return (
     <group {...props} dispose={null}>
       <group scale={8.639}>
-        <mesh geometry={nodes.Plane.geometry} material={materials['Material.001']} />
-        <mesh geometry={nodes.Plane_1.geometry} material={materials['Material.003']} />
-        <mesh geometry={nodes.Plane_2.geometry} material={materials['Material.002']} />
+        <mesh geometry={(nodes.Plane as THREE.Mesh).geometry} material={materials['Material.001']} />
+        <mesh geometry={(nodes.Plane_1 as THREE.Mesh).geometry} material={materials['Material.003']} />
+        <mesh geometry={(nodes.Plane_2 as THREE.Mesh).geometry} material={materials['Material.002']} />
       </group>
     </group>
   )
