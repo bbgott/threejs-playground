@@ -1,13 +1,8 @@
 import { Canvas } from '@react-three/fiber'
-import { useGLTF, OrbitControls, Stage } from '@react-three/drei'
+import { OrbitControls, Stage } from '@react-three/drei'
 import { Suspense } from 'react'
-import volcanoUrl from './assets/Volcano.glb'
+import { Volcano } from './Volcano'
 import Smoke from './Smoke'
-
-function VolcanoModel() {
-  const { scene } = useGLTF(volcanoUrl)
-  return <primitive object={scene} />
-}
 
 function App() {
   return (
@@ -15,7 +10,7 @@ function App() {
       <Canvas camera={{ position: [0, 2, 5], fov: 45 }}>
         <Suspense fallback={null}>
           <Stage environment="city" intensity={0.6}>
-            <VolcanoModel />
+            <Volcano />
             <Smoke />
           </Stage>
           <OrbitControls
