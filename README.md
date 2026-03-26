@@ -1,73 +1,49 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Three.js Playground
 
-Currently, two official plugins are available:
+A playground project using React, Vite, and Three.js (via @react-three/fiber and @react-three/drei) to render interactive 3D scenes. This project includes a volcano model and smoke effects, with camera controls.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
+- 3D volcano scene rendered with Three.js
+- Realistic smoke effect
+- Interactive camera controls (orbit, zoom, angle limits)
+- Uses React and Vite for fast development
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Prerequisites
+- Node.js (v18 or newer recommended)
+- npm (comes with Node.js)
 
-## Expanding the ESLint configuration
+### Installation
+1. Clone the repository:
+  ```sh
+  git clone <repo-url>
+  cd threejs-playground
+  ```
+2. Install dependencies:
+  ```sh
+  npm install
+  ```
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Running the Development Server
+Start the Vite development server:
+```sh
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+This will start the app at [http://localhost:5173](http://localhost:5173) (or another port if 5173 is in use).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Project Structure
+- `src/App.tsx` — Main React component, sets up the 3D scene
+- `src/Volcano.jsx` — Volcano 3D model component
+- `src/Smoke.jsx` — Smoke effect component
+- `public/` — Static assets
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Customization
+- Edit or add components in the `src/` directory to modify the scene.
+- Update styles in `src/App.css` or `src/index.css`.
+
+## License
+
+This project is licensed under the MIT License.

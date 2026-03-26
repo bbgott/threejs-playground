@@ -3,6 +3,7 @@ import { OrbitControls, Stage } from '@react-three/drei'
 import { Suspense } from 'react'
 import { Volcano } from './Volcano'
 import Smoke from './Smoke'
+import './App.css'
 
 function App() {
   return (
