@@ -1,11 +1,16 @@
 
 # Three.js Playground
 
+
 A playground project using React, Vite, and Three.js (via @react-three/fiber and @react-three/drei) to render interactive 3D scenes. This project includes a volcano model and smoke effects, with camera controls.
+
+## 🌐 Live Demo
+
+[View the live page here!](https://bbgott.github.io/threejs-playground)
 
 ## Features
 - 3D volcano scene rendered with Three.js
-- Realistic smoke effect
+- Animated smoke effect
 - Interactive camera controls (orbit, zoom, angle limits)
 - Uses React and Vite for fast development
 
