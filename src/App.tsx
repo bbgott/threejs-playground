@@ -21,6 +21,8 @@ function App() {
           <OrbitControls
             makeDefault
             autoRotate
+            minDistance={7} // Prevent camera from getting too close
+            maxDistance={20} // Prevent camera from getting too far
             maxPolarAngle={Math.PI / 2} // Prevent camera from going below the ground
             minPolarAngle={Math.PI / 6} // Limit how high the camera can go
           />
